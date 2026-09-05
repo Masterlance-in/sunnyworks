@@ -1,0 +1,29 @@
+SunnyWorks - Website Live Details
+==============================
+Date: 05 Sep 2026
+
+1. Live Website URL (Public):
+   https://kums46557-cyber.github.io/sunnyworks/
+
+2. GitHub Repo (Public):
+   https://github.com/kums46557-cyber/sunnyworks
+   Branch: main
+   File: index.html
+
+3. Local File:
+   D:/Projects/freelancing/Website/index.html
+
+4. Status:
+   GitHub Pages = ENABLED (building -> live in 2-3 min)
+   Repo Visibility = Public
+
+5. Update Kaise Kare:
+   cd D:/Projects/freelancing/Website
+   # index.html edit karo
+   git add . && git commit -m "update" && git push
+   # GitHub token: ghp_ZVIdan... (90 days) - Settings > Developer settings me delete kar sakta hai
+
+6. Custom Domain (Future):
+   Agar sunnyworks.com lena ho to GitHub > Settings > Pages > Custom domain me add karna
+
+Note: Ye file local backup ke liye hai - GitHub pe push nahi hui.
