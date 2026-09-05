@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SunnyWorks — One Hub for Office, Data & Creative Work</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090a;--panel:#0f1011;--surface:#191a1b;--surface2:#28282c;--text:#f7f8f8;--muted:#8a8f98;--muted2:#62666d;--border:rgba(255,255,255,0.08);--border-sub:rgba(255,255,255,0.05);--accent:#5e6ad2;--accent2:#7170ff;--accenthover:#828fff;--green:#10b981}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);font-feature-settings:"cv01","ss03";-webkit-font-smoothing:antialiased;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:rgba(8,9,10,0.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-sub)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-0.02em}
+.logo-mark{width:28px;height:28px;background:var(--accent);border-radius:6px;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#fff}
+.nav-links{display:flex;gap:22px;font-size:13px;font-weight:500;color:#d0d6e0}
+.nav-links a:hover{color:var(--text)}
+.btn-primary{background:var(--accent);color:#fff;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:500;transition:.15s}
+.btn-primary:hover{background:var(--accenthover)}
+.btn-ghost{background:rgba(255,255,255,0.02);border:1px solid var(--border);padding:8px 16px;border-radius:6px;font-size:13px;color:#e2e4e7}
+.btn-ghost:hover{background:rgba(255,255,255,0.05)}
+.hero{padding:72px 0 56px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:rgba(255,255,255,0.02);padding:6px 12px;border-radius:999px;font-size:12px;color:#d0d6e0;font-family:'JetBrains Mono',monospace}
+.badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green)}
+.hero h1{font-size:52px;font-weight:500;letter-spacing:-1.2px;line-height:1.02;margin:22px auto 16px;max-width:720px}
+.hero p{color:var(--muted);font-size:18px;max-width:640px;margin:0 auto 28px;line-height:1.6}
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.hero-card{max-width:860px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,0.2),0 8px 24px rgba(0,0,0,0.4)}
+.hero-card-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border-sub);background:var(--panel)}
+.dot{width:10px;height:10px;border-radius:50%;background:#28282c;border:1px solid var(--border)}
+.hero-card-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border-sub)}
+.mini{padding:18px;background:var(--panel);text-align:left}
+.mini-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;color:var(--muted2);text-transform:uppercase;margin-bottom:8px}
+.mini strong{font-size:14px;display:block;margin-bottom:4px}
+.mini span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-top:1px solid var(--border-sub)}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
+.section-title{font-size:32px;font-weight:500;letter-spacing:-0.6px;margin-bottom:10px}
+.section-desc{color:var(--muted);font-size:15px;max-width:620px;line-height:1.6;margin-bottom:28px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:10px;padding:22px;transition:.15s}
+.card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+.card-icon{width:36px;height:36px;border-radius:8px;background:rgba(94,106,210,0.15);border:1px solid rgba(94,106,210,0.3);display:grid;place-items:center;font-size:16px;margin-bottom:14px}
+.card h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.card ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.card ul li{font-size:11px;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid var(--border-sub);color:#d0d6e0}
+.work-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.work-head{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-sub)}
+.work-tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 8px;border-radius:6px;background:rgba(94,106,210,0.15);color:var(--accenthover);border:1px solid rgba(94,106,210,0.25)}
+.work-body{padding:18px}
+.work-body h4{font-size:15px;margin-bottom:6px}
+.work-body p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.work-stats{display:flex;gap:14px;font-size:12px;color:var(--muted2);font-family:'JetBrains Mono',monospace}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;position:relative}
+.price-card.featured{border-color:var(--accent);background:linear-gradient(180deg,rgba(94,106,210,0.12),rgba(255,255,255,0.02))}
+.price-card h4{font-size:14px;color:var(--muted);margin-bottom:6px}
+.price{font-size:28px;font-weight:600;letter-spacing:-0.6px;margin-bottom:4px}
+.price span{font-size:13px;color:var(--muted);font-weight:400}
+.price-card ul{list-style:none;margin:14px 0 18px}
+.price-card ul li{font-size:13px;color:#d0d6e0;padding:6px 0;border-bottom:1px solid var(--border-sub);display:flex;gap:8px}
+.price-card ul li::before{content:"✓";color:var(--green);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{padding:18px;background:rgba(255,255,255,0.02);border:1px solid var(--border-sub);border-radius:10px}
+.step-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent2);margin-bottom:8px}
+.step h4{font-size:14px;margin-bottom:6px}
+.step p{font-size:12px;color:var(--muted);line-height:1.6}
+.contact-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:24px;align-items:center}
+.contact-box h3{font-size:20px;margin-bottom:8px}
+.contact-box p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.contact-meta{font-size:12px;color:var(--muted2);font-family:'JetBrains Mono',monospace;line-height:1.8}
+.input{width:100%;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:13px;margin-bottom:10px}
+.input::placeholder{color:var(--muted2)}
+footer{padding:28px 0;border-top:1px solid var(--border-sub);color:var(--muted2);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:900px){.grid-4{grid-template-columns:1fr 1fr}.grid-2{grid-template-columns:1fr}.pricing{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}.contact-box{grid-template-columns:1fr}.hero-card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <div class="logo"><div class="logo-mark">S</div> SunnyWorks <span style="color:var(--muted2);font-weight:400">— One Hub</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn-primary" href="https://wa.me/919117318314" target="_blank">WhatsApp Now</a>
+  </div>
+</nav>
+
+<div class="hero container">
+  <div class="badge"><span class="badge-dot"></span> Available for freelance • Response &lt; 2 hrs</div>
+  <h1>One place for all your office & creative work</h1>
+  <p>PDF to Excel, Excel dashboards, Word & PPT, Video editing, WebDev & Python — no platform needed. Send file, get clean file back in 12–24 hrs.</p>
+  <div class="hero-ctas">
+    <a class="btn-primary" href="#work">See My Work →</a>
+    <a class="btn-ghost" href="https://drive.google.com" target="_blank">Open Portfolio Drive</a>
+  </div>
+  <div class="hero-card">
+    <div class="hero-card-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted2)">sunnyworks — dashboard preview</span></div>
+    <div class="hero-card-grid">
+      <div class="mini"><div class="mini-label">PDF → Excel</div><strong>1,436 rows cleaned</strong><span>HealthFuel Flipkart Q1 2026 • 24 pages → 4 sheets</span></div>
+      <div class="mini"><div class="mini-label">Video Editing</div><strong>DaVinci • Reels & YouTube</strong><span>Color, audio, subtitles, fast delivery</span></div>
+      <div class="mini"><div class="mini-label">Web & Python</div><strong>Automation + Sites</strong><span>Scraping, scripts, landing pages</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">Everything your business needs, in one hub</h2>
+    <p class="section-desc">No more hunting on 5 platforms. One WhatsApp, one Drive, one person — Sunny.</p>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Excel & Data</h3>
+        <p>Messy data → clean, filtered, ready-to-use sheets with totals & charts.</p>
+        <ul><li>PDF/Image to Excel</li><li>Data Cleaning</li><li>Dashboard</li><li>Tracker</li><li>Pivot & Charts</li></ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3>Word & PPT</h3>
+        <p>Resume, proposal, report, pitch deck — polished & print-ready.</p>
+        <ul><li>Resume</li><li>Proposal</li><li>Report</li><li>Pitch Deck</li><li>Certificate</li></ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎬</div>
+        <h3>Video Editing</h3>
+        <p>YouTube, Reels, promo — DaVinci, color, audio, captions, fast.</p>
+        <ul><li>YouTube</li><li>Reels/Shorts</li><li>Promo</li><li>Color Grading</li><li>Subtitles</li></ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">💻</div>
+        <h3>Web & Python</h3>
+        <p>Automation, scraping, scripts & simple landing pages.</p>
+        <ul><li>Landing Page</li><li>Python Script</li><li>Automation</li><li>Scraping</li><li>Writing</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-label">Selected Work — Real Client Projects</div>
+    <h2 class="section-title">Recent deliveries</h2>
+    <p class="section-desc">All files are on Drive — you get a clean file, not a screenshot.</p>
+    <div class="grid-2">
+      <div class="work-card">
+        <div class="work-head"><strong>UrbanGlow — Zepto</strong><span class="work-tag">Excel • 1,005 rows</span></div>
+        <div class="work-body"><h4>Single-column → 12 columns + Cancellation Analysis</h4><p>Parsed 3 delimiters, normalized 7 status variants, built Top-5 cancelled (Lakme 21) & lost revenue (L'Oreal ₹24,569) dashboard.</p><div class="work-stats"><span>Apr–Aug 2026</span><span>•</span><span>3 sheets</span><span>•</span><span>100% accuracy</span></div></div>
+      </div>
+      <div class="work-card">
+        <div class="work-head"><strong>HealthFuel — Flipkart</strong><span class="work-tag">PDF 24 pages</span></div>
+        <div class="work-body"><h4>1,436 orders → Weekly Trend + 5 Least Selling</h4><p>Regex on pipe pattern, date serial → 01-Apr-2026, peak week W18 ₹1.21L, least: Brown Rice 1 qty.</p><div class="work-stats"><span>Q1 2026</span><span>•</span><span>4 sheets</span><span>•</span><span>&lt;24 hrs</span></div></div>
+      </div>
+      <div class="work-card">
+        <div class="work-head"><strong>Spice Junction — Swiggy</strong><span class="work-tag">FY 2025-26</span></div>
+        <div class="work-body"><h4>571 orders • Butter Naan 88 qty #1</h4><p>Single pipe column → 9 columns, Top 5 by qty & revenue (Chicken Biryani ₹16k) with bar charts.</p><div class="work-stats"><span>Swiggy</span><span>•</span><span>571 rows</span><span>•</span><span>charts</span></div></div>
+      </div>
+      <div class="work-card">
+        <div class="work-head"><strong>Video + Health Trackers</strong><span class="work-tag">Templates</span></div>
+        <div class="work-body"><h4>Diet/Exercise auto trackers + YouTube edits</h4><p>Date-wise fillable logs with weekly summaries & charts — sellable templates + DaVinci edits.</p><div class="work-stats"><span>Reusable</span><span>•</span><span>Excel + DaVinci</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">How it works</div>
+    <h2 class="section-title">Send file → get clean file</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><h4>You send</h4><p>PDF/Excel/Video + voice note of what you need on WhatsApp.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>I clean & build</h4><p>Data split, normalized, validated — no duplicates/missing, charts added.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>You get file</h4><p>Drive link with clean Excel/Word/PPT/video — filter, totals, print-ready.</p></div>
+      <div class="step"><div class="step-num">04</div><h4>2 free revisions</h4><p>Any tweak in 24 hrs — free. You pay only when happy.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Simple pricing</div>
+    <h2 class="section-title">No platform fees — direct to you</h2>
+    <div class="pricing">
+      <div class="price-card">
+        <h4>Basic — Quick Fix</h4><div class="price">₹499 <span>/ task</span></div><p style="font-size:12px;color:var(--muted)">For small files &lt;200 rows</p>
+        <ul><li>PDF/Image to Excel</li><li>Basic cleaning & formatting</li><li>12 hrs delivery</li><li>1 revision</li></ul>
+        <a class="btn-ghost" style="display:block;text-align:center" href="https://wa.me/919117318314?text=Hi%20Sunny,%20Basic%20plan">Start Basic</a>
+      </div>
+      <div class="price-card featured">
+        <div style="position:absolute;top:-10px;right:16px;background:var(--accent);color:#fff;font-size:11px;padding:4px 8px;border-radius:999px;font-weight:600">MOST POPULAR</div>
+        <h4>Standard — Clean + Dashboard</h4><div class="price">₹1,499 <span>/ project</span></div><p style="font-size:12px;color:var(--muted)">Best for sales reports 500–1,500 rows</p>
+        <ul><li>Everything in Basic</li><li>Full data structuring</li><li>Dashboard + charts</li><li>Weekly/Top 5 analysis</li><li>2 revisions • 24 hrs</li></ul>
+        <a class="btn-primary" style="display:block;text-align:center" href="https://wa.me/919117318314?text=Hi%20Sunny,%20Standard%20plan">Start Standard</a>
+      </div>
+      <div class="price-card">
+        <h4>Premium — Office + Video</h4><div class="price">₹2,999 <span>/ combo</span></div><p style="font-size:12px;color:var(--muted)">For brands needing both</p>
+        <ul><li>Excel + Word/PPT together</li><li>Or Excel + Video edit</li><li>Priority 12 hrs</li><li>Unlimited tweaks 48 hrs</li></ul>
+        <a class="btn-ghost" style="display:block;text-align:center" href="https://wa.me/919117318314?text=Hi%20Sunny,%20Premium%20plan">Start Premium</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <h3>Let’s get your work done</h3>
+        <p>No form spam. Just WhatsApp your file + requirement. I reply in &lt;2 hours, 9 AM–9 PM IST.</p>
+        <div class="contact-actions">
+          <a class="btn-primary" href="https://wa.me/919117318314?text=Hi%20Sunny,%20I%20have%20a%20PDF%20to%20Excel%20work" target="_blank">WhatsApp Sunny</a>
+          <a class="btn-ghost" href="mailto:sunny.office.works@gmail.com">sunny.office.works@gmail.com</a>
+        </div>
+      </div>
+      <div>
+        <input class="input" placeholder="Your name">
+        <input class="input" placeholder="WhatsApp number">
+        <input class="input" placeholder="What do you need? (e.g. PDF to Excel 500 rows)">
+        <a class="btn-primary" style="display:block;text-align:center;margin-top:6px" href="https://wa.me/919117318314">Send on WhatsApp →</a>
+        <div class="contact-meta" style="margin-top:10px">📍 Bihar Sharif, Bihar, India<br>💬 Hindi / English / Hinglish — all ok<br>💳 UPI / Bank Transfer • Invoice on request</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="container">
+  <span>© 2026 SunnyWorks — Crafted with accuracy. All work confidential.</span>
+  <span style="font-family:'JetBrains Mono',monospace">Built by Sunny • No platform needed</span>
+</footer>
+</body>
+</html>
