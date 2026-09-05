@@ -1,29 +1,31 @@
 SunnyWorks - Website Live Details
 ==============================
-Date: 05 Sep 2026
+Date: 05 Sep 2026 - Updated after username change
 
 1. Live Website URL (Public):
-   https://kums46557-cyber.github.io/sunnyworks/
+   https://masterlance-in.github.io/sunnyworks/
 
 2. GitHub Repo (Public):
-   https://github.com/kums46557-cyber/sunnyworks
+   https://github.com/Masterlance-in/sunnyworks
    Branch: main
-   File: index.html
+   Files: index.html, WEB_DETAILS.txt
+   Old URL (redirects): https://kums46557-cyber.github.io/sunnyworks/
 
 3. Local File:
    D:/Projects/freelancing/Website/index.html
 
-4. Status:
+4. Owner:
+   GitHub Username: Masterlance-in (changed from kums46557-cyber)
+   ID: 248110994
+
+5. Status:
    GitHub Pages = ENABLED (building -> live in 2-3 min)
    Repo Visibility = Public
 
-5. Update Kaise Kare:
+6. Update Kaise Kare:
    cd D:/Projects/freelancing/Website
    # index.html edit karo
    git add . && git commit -m "update" && git push
-   # GitHub token: ghp_ZVIdan... (90 days) - Settings > Developer settings me delete kar sakta hai
 
-6. Custom Domain (Future):
-   Agar sunnyworks.com lena ho to GitHub > Settings > Pages > Custom domain me add karna
-
-Note: Ye file local backup ke liye hai - GitHub pe push nahi hui.
+7. Custom Domain (Future):
+   Agar masterlance.in / sunnyworks.com lena ho to GitHub > Settings > Pages > Custom domain me add karna
