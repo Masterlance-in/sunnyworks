@@ -1,6 +1,6 @@
 # Ten English Idioms: Meaning, Origin, Example & Memory Hook
 
-Each numbered item maps to the same-numbered panel on `idioms-illustrated-study-sheet.png`. Hindi glosses are concise learning aids, not word-for-word translations.
+Each numbered item maps to the same-numbered panel on `idioms-illustrated-study-sheet.jpg` (or the full-resolution PNG). Hindi glosses are concise learning aids, not word-for-word translations.
 
 ## 1. A bad patch
 - **Meaning:** A difficult period; a spell when things are going badly.
@@ -86,6 +86,7 @@ Each numbered item maps to the same-numbered panel on `idioms-illustrated-study-
 - Word Histories, “a blessing in disguise”: https://wordhistories.net/2024/03/10/blessing-in-disguise/
 
 Source dates and origin claims can differ because dictionaries record different evidence. The notes above separate an attested date or metaphor from an unverified claim about who first coined a phrase.
+
 
 
 
